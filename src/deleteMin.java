@@ -14,6 +14,26 @@ arr	return
 public class deleteMin {
     public int[] solution(int[] arr) {
         int[] answer = {};
+        int min = arr[0];
+        int target = 0;
+        int cnt = 0;
+        if(arr.length == 1){
+            return new int[]{-1};
+        }
+        for(int i=0; i< arr.length; i++){
+            if(min > arr[i]) {
+                min = arr[i];
+                target = i;
+            }
+        } // 여기까지는 스스로 구현
+        System.out.println(target);
+
+        answer = new int[arr.length - 1];
+        for(int i=0; i<arr.length; i++){
+            if(i == target)
+                continue;
+            answer[cnt++] = arr[i];
+        }
         return answer;
     }
 
